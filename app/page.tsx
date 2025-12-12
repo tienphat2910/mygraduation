@@ -1,4 +1,5 @@
 "use client";
+export const dynamic = "force-dynamic";
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -19,6 +20,19 @@ export default function Home() {
   const graduationDate = new Date("2025-12-19T07:30:00");
 
   useEffect(() => {
+    // Scroll to top and clear cache on page load
+    window.scrollTo(0, 0);
+
+    // Clear any cached states
+    if (typeof window !== "undefined") {
+      sessionStorage.clear();
+
+      // Prevent browser from restoring scroll position
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+    }
+
     // Loading animation
     const loadingTimer = setTimeout(() => {
       setLoading(false);
@@ -49,10 +63,17 @@ export default function Home() {
   const getDaysInMonth = () => {
     const year = 2025;
     const month = 11; // December (0-indexed)
+
+    // Get current date in Vietnam timezone (UTC+7)
+    const vietnamTime = new Date(
+      new Date().toLocaleString("en-US", { timeZone: "Asia/Ho_Chi_Minh" })
+    );
+    const today = vietnamTime.getDate();
+    const currentMonth = vietnamTime.getMonth();
+    const currentYear = vietnamTime.getFullYear();
+
     const firstDay = new Date(year, month, 1).getDay();
     const daysInMonth = new Date(year, month + 1, 0).getDate();
-    const today = new Date().getDate();
-    const currentMonth = new Date().getMonth();
 
     const days = [];
 
@@ -66,7 +87,9 @@ export default function Home() {
       days.push(i);
     }
 
-    return { days, today: currentMonth === 11 ? today : null };
+    // Only highlight today if it's December 2025
+    const isCurrentMonth = currentMonth === 11 && currentYear === 2025;
+    return { days, today: isCurrentMonth ? today : null };
   };
 
   const calendar = getDaysInMonth();
@@ -377,7 +400,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: false, margin: "-50px", amount: 0.3 }}
               className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-8 motion-text"
               style={{ fontFamily: "MotherLand, cursive" }}
             >
@@ -620,7 +643,10 @@ export default function Home() {
           >
             <h2
               className="text-5xl md:text-7xl font-bold text-gray-800 motion-text"
-              style={{ fontFamily: "MotherLand, cursive" }}
+              style={{
+                fontFamily: "MotherLand, cursive",
+                transform: "translateZ(0)"
+              }}
             >
               Thank You
             </h2>
