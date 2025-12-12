@@ -49,3 +49,17 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #e11d48;
 }
+
+/* Fix iOS Safari text clipping in animations */
+* {
+  -webkit-transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.motion-text {
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
+}

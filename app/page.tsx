@@ -115,7 +115,7 @@ export default function Home() {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-linear-to-br from-pink-100 via-blue-100 to-purple-100"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-pink-100 via-blue-100 to-purple-100"
           >
             <div className="text-center">
               <motion.div
@@ -167,7 +167,7 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      <div className="min-h-screen bg-linear-to-br from-pink-50 via-blue-50 to-purple-50">
+      <div className="min-h-screen bg-gradient-to-br from-pink-50 via-blue-50 to-purple-50 overflow-x-hidden">
         {/* Hero Section - Cover Image with Name */}
         <section className="relative min-h-screen flex items-end justify-center">
           {/* Cover Image Background */}
@@ -189,7 +189,7 @@ export default function Home() {
           </motion.div>
 
           {/* Overlay */}
-          <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
 
           {/* Content */}
           <motion.div
@@ -199,7 +199,7 @@ export default function Home() {
             className="relative z-10 text-center px-4 pb-16 md:pb-24 w-full"
           >
             <h1
-              className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-loose md:leading-tight"
               style={{ fontFamily: "MotherLand, cursive" }}
             >
               Nguyễn Thị Thanh Tuyền
@@ -305,7 +305,7 @@ export default function Home() {
             className="max-w-6xl mx-auto text-center"
           >
             <h2
-              className="text-3xl md:text-4xl font-bold text-gray-800 mb-6"
+              className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 motion-text"
               style={{ fontFamily: "MotherLand, cursive" }}
             >
               THÂN MỜI
@@ -378,7 +378,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true, margin: "-100px" }}
-              className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-8"
+              className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-8 motion-text"
               style={{ fontFamily: "MotherLand, cursive" }}
             >
               Tháng 12
@@ -467,7 +467,7 @@ export default function Home() {
             </div>
 
             {/* Divider */}
-            <div className="w-full max-w-2xl mx-auto h-px bg-linear-to-r from-transparent via-rose-300 to-transparent mb-8"></div>
+            <div className="w-full max-w-2xl mx-auto h-px bg-gradient-to-r from-transparent via-rose-300 to-transparent mb-8"></div>
 
             <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2">
               Trường Đại học Tài chính - Marketing
@@ -497,7 +497,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true, margin: "-100px" }}
-              className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12"
+              className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12 motion-text"
               style={{ fontFamily: "MotherLand, cursive" }}
             >
               Sự kiện quan trọng
@@ -529,7 +529,7 @@ export default function Home() {
                 >
                   <div className="flex items-center gap-4 md:gap-0">
                     {/* Mobile timeline dot */}
-                    <div className="md:hidden w-8 h-8 rounded-full bg-rose-500 border-4 border-white shadow-lg flex items-center justify-center shrink-0"></div>
+                    <div className="md:hidden w-8 h-8 rounded-full bg-rose-500 border-4 border-white shadow-lg flex items-center justify-center flex-shrink-0"></div>
 
                     <div
                       className={`flex-1 ${
@@ -583,7 +583,7 @@ export default function Home() {
                 <div className="flex items-center justify-center gap-4 mb-8">
                   <div className="h-px bg-rose-400 flex-1"></div>
                   <h2
-                    className="text-3xl md:text-4xl font-bold text-gray-800 px-4"
+                    className="text-3xl md:text-4xl font-bold text-gray-800 px-4 motion-text"
                     style={{ fontFamily: "MotherLand, cursive" }}
                   >
                     Time
@@ -619,7 +619,7 @@ export default function Home() {
             className="text-center"
           >
             <h2
-              className="text-5xl md:text-7xl font-bold text-gray-800"
+              className="text-5xl md:text-7xl font-bold text-gray-800 motion-text"
               style={{ fontFamily: "MotherLand, cursive" }}
             >
               Thank You
