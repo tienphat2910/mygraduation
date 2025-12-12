@@ -115,7 +115,7 @@ export default function Home() {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-pink-100 via-blue-100 to-purple-100"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-linear-to-br from-pink-100 via-blue-100 to-purple-100"
           >
             <div className="text-center">
               <motion.div
@@ -167,7 +167,7 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      <div className="min-h-screen bg-gradient-to-br from-pink-50 via-blue-50 to-purple-50">
+      <div className="min-h-screen bg-linear-to-br from-pink-50 via-blue-50 to-purple-50">
         {/* Hero Section - Cover Image with Name */}
         <section className="relative min-h-screen flex items-end justify-center">
           {/* Cover Image Background */}
@@ -189,7 +189,7 @@ export default function Home() {
           </motion.div>
 
           {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+          <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent"></div>
 
           {/* Content */}
           <motion.div
@@ -467,7 +467,7 @@ export default function Home() {
             </div>
 
             {/* Divider */}
-            <div className="w-full max-w-2xl mx-auto h-px bg-gradient-to-r from-transparent via-rose-300 to-transparent mb-8"></div>
+            <div className="w-full max-w-2xl mx-auto h-px bg-linear-to-r from-transparent via-rose-300 to-transparent mb-8"></div>
 
             <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2">
               Trường Đại học Tài chính - Marketing
@@ -529,7 +529,7 @@ export default function Home() {
                 >
                   <div className="flex items-center gap-4 md:gap-0">
                     {/* Mobile timeline dot */}
-                    <div className="md:hidden w-8 h-8 rounded-full bg-rose-500 border-4 border-white shadow-lg flex items-center justify-center flex-shrink-0"></div>
+                    <div className="md:hidden w-8 h-8 rounded-full bg-rose-500 border-4 border-white shadow-lg flex items-center justify-center shrink-0"></div>
 
                     <div
                       className={`flex-1 ${
